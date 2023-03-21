@@ -1,6 +1,7 @@
 {{- $id := printf "carousel-%s" page.File.UniqueID }}
 {{- $pages := .Pages }}
 {{- $height := 360 }}
+{{- if $pages }}
 <div id="{{ $id }}" class="hb-carousel carousel slide hb-module">
   <div class="carousel-indicators">
     {{- $first := true }}
@@ -63,3 +64,4 @@
     </a>
   </div>
 </div>
+{{- end }}
