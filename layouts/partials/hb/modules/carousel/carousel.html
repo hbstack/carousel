@@ -3,7 +3,7 @@
 {{- $height := 360 }}
 {{- if $pages }}
 <div id="{{ $id }}" class="hb-carousel carousel slide hb-module">
-  <div class="carousel-indicators">
+  <div class="carousel-indicators justify-content-center justify-content-md-start">
     {{- $first := true }}
     {{- range $i, $page := $pages }}
       <button
@@ -34,7 +34,7 @@
         {{- else }}
           <div class="carousel-img-placeholder"></div>
         {{- end }}
-        <div class="carousel-caption">
+        <div class="carousel-caption text-center text-md-start">
           <div>
             <a class="h6 text-decoration-none" href="{{ .RelPermalink }}">
               {{- .Title -}}
@@ -45,7 +45,7 @@
       {{- $first = false }}
     {{- end }}
   </div>
-  <div class="carousel-controls">
+  <div class="carousel-controls d-none d-md-block">
     <a
       class="carousel-control me-2"
       role="button"
