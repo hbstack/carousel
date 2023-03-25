@@ -30,13 +30,14 @@
 
     .carousel-indicators {
         justify-content: start;
-        margin: 0.25rem 0.875rem;
+        margin: 0.25rem 0.75rem;
 
         [data-bs-target] {
             background-color: #fff !important;
             border-radius: 50%;
-            height: 15px;
-            width: 15px;
+            height: 16px;
+            width: 16px;
+            margin: 0 5px;
         }
 
         [aria-current="true"] {
