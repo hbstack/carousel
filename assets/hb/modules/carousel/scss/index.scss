@@ -22,23 +22,33 @@
         bottom: 0;
         color: rgba(255, 255, 255, 75%) !important;
         left: 0;
-        padding: 0.75rem 1rem 3rem;
+        padding: 0.75rem 1rem 2.25rem;
         opacity: 0.75;
         right: 0;
-        text-align: start;
+    }
+
+    .carousel-caption-link {
+        color: rgba(255, 255, 255, 87.5%);
+
+        &:hover {
+            color: white;
+        }
     }
 
     .carousel-indicators {
+        bottom: 0.5rem;
         justify-content: start;
-        margin: 0.25rem 0.75rem;
+        margin: 0 0.825rem;
 
         [data-bs-target] {
             background-color: #fff !important;
             border-radius: 50%;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
             height: 15px;
             width: 15px;
             margin: 0 5px;
-            padding: 3px;
+            padding: 2px;
         }
 
         [aria-current="true"] {
