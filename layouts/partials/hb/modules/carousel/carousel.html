@@ -19,9 +19,14 @@
     {{- $first := true }}
     {{- range $pages }}
       {{- $imgURL := "" }}
+      {{- $naturalHeight := 0 }}
+      {{- $naturalWidth := 0 }}
       {{- $img := partialCached "hb/functions/page-featured-image" . . }}
       {{- if $img }}
-        {{- $imgURL = ($img.Resize (printf `x%d` $height)).RelPermalink }}
+        {{- $img = $img.Resize (printf `x%d` $height) }}
+        {{- $imgURL = $img.RelPermalink }}
+        {{- $naturalHeight = $img.Height }}
+        {{- $naturalWidth = $img.Width }}
       {{- else if isset .Params.images 0 }}
         {{- $imgURL = index .Params.images 0 | absURL }}
       {{- end }}
@@ -31,6 +36,8 @@
             src="{{ $imgURL }}"
             class="carousel-img d-block w-100"
             {{ if not $first }}loading="lazy"{{ end }}
+            {{ with $naturalHeight }}height="{{ . }}"{{ end }}
+            {{ with $naturalWidth }}width="{{ . }}"{{ end }}
             alt="{{ .Title }}" />
         {{- else }}
           <div class="carousel-img-placeholder"></div>
