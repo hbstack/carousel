@@ -30,7 +30,7 @@
           <img
             src="{{ $imgURL }}"
             class="carousel-img d-block w-100"
-            loading="lazy"
+            {{ if not $first }}loading="lazy"{{ end }}
             alt="{{ .Title }}" />
         {{- else }}
           <div class="carousel-img-placeholder"></div>
