@@ -1,75 +1,38 @@
 {{- $id := printf "carousel-%s" page.File.UniqueID }}
 {{- $pages := .Pages }}
-{{- $height := 360 }}
 {{- if $pages }}
-<div id="{{ $id }}" class="hb-carousel carousel slide hb-module">
-  <div class="carousel-indicators justify-content-center justify-content-md-start">
-    {{- $first := true }}
-    {{- range $i, $page := $pages }}
-      <button
-        type="button"
-        data-bs-target="#{{ $id }}"
-        data-bs-slide-to="{{ $i }}"
-        {{ if $first }}class="active" aria-current="true"{{ end }}
-        aria-label="Slide {{ $i }}"></button>
-      {{- $first = false }}
-    {{- end }}
-  </div>
-  <div class="carousel-inner border border-secondary-subtle">
-    {{- $first := true }}
-    {{- range $pages }}
-      {{- $imgURL := "" }}
-      {{- $naturalHeight := 0 }}
-      {{- $naturalWidth := 0 }}
-      {{- $img := partialCached "hb/functions/page-featured-image" . . }}
-      {{- if $img }}
-        {{- $img = $img.Resize (printf `x%d` $height) }}
-        {{- $imgURL = $img.RelPermalink }}
-        {{- $naturalHeight = $img.Height }}
-        {{- $naturalWidth = $img.Width }}
-      {{- else if isset .Params.images 0 }}
-        {{- $imgURL = index .Params.images 0 | absURL }}
+  <div id="{{ $id }}" class="hb-carousel carousel slide hb-module">
+    <div
+      class="carousel-indicators justify-content-center justify-content-md-start">
+      {{- $first := true }}
+      {{- range $i, $page := $pages }}
+        <button
+          type="button"
+          data-bs-target="#{{ $id }}"
+          data-bs-slide-to="{{ $i }}"
+          {{ if $first }}class="active" aria-current="true"{{ end }}
+          aria-label="Slide {{ $i }}"></button>
+        {{- $first = false }}
       {{- end }}
-      <div class="carousel-item{{ cond $first ` active` `` }}">
-        {{- if $imgURL }}
-          <img
-            src="{{ $imgURL }}"
-            class="carousel-img d-block w-100"
-            {{ if not $first }}loading="lazy"{{ end }}
-            {{ with $naturalHeight }}height="{{ . }}"{{ end }}
-            {{ with $naturalWidth }}width="{{ . }}"{{ end }}
-            alt="{{ .Title }}" />
-        {{- else }}
-          <div class="carousel-img-placeholder"></div>
-        {{- end }}
-        <div class="carousel-caption text-center text-md-start">
-          <div class="h5">
-            <a class="carousel-caption-link d-block text-decoration-none" href="{{ .RelPermalink }}">
-              {{- .Title -}}
-            </a>
+    </div>
+    <div class="carousel-inner border border-secondary-subtle rounded-1">
+      {{- $first := true }}
+      {{- range $pages }}
+        <div class="carousel-item{{ cond $first ` active` `` }}">
+          {{ partial "hb/modules/carousel/image" (dict "Page" . "LazyLoading" (not $first)) }}
+          <div class="carousel-caption text-center text-md-start">
+            <div class="h5">
+              <a
+                class="carousel-caption-link d-block text-decoration-none"
+                href="{{ .RelPermalink }}">
+                {{- .Title -}}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      {{- $first = false }}
-    {{- end }}
+        {{- $first = false }}
+      {{- end }}
+    </div>
+    {{ partial "hb/modules/carousel/controls" $id }}
   </div>
-  <div class="carousel-controls d-none d-md-block">
-    <a
-      class="carousel-control me-2"
-      role="button"
-      href="#{{ $id }}"
-      data-bs-slide="prev">
-      {{- partial "icons/icon" (dict "vendor" "bs" "name" "arrow-left-square" "height" "1.75em" "width" "1.75em") -}}
-      <span class="visually-hidden">Previous</span>
-    </a>
-    <a
-      class="carousel-control"
-      role="button"
-      href="#{{ $id }}"
-      data-bs-slide="next">
-      {{- partial "icons/icon" (dict "vendor" "bs" "name" "arrow-right-square" "height" "1.75em" "width" "1.75em") -}}
-      <span class="visually-hidden">Next</span>
-    </a>
-  </div>
-</div>
 {{- end }}
