@@ -17,5 +17,9 @@
     "Original" true)
   }}
 {{- else }}
-  <div class="carousel-img-placeholder"></div>
+  <a
+    class="carousel-img-placeholder carousel-link d-flex align-items-center justify-content-center text-decoration-none h5 mb-0"
+    href="{{ .Page.RelPermalink }}">
+    {{- .Page.Title -}}
+  </a>
 {{- end }}

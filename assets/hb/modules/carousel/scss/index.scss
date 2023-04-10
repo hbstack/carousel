@@ -18,17 +18,20 @@
     }
 
     .carousel-caption {
-        background: rgba(0, 0, 0, 75%);
         bottom: 0;
-        color: rgba(255, 255, 255, 75%) !important;
         left: 0;
         padding: 0.75rem 1rem 2.25rem;
         opacity: 0.75;
         right: 0;
     }
 
-    .carousel-caption-link {
-        color: rgba(255, 255, 255, 87.5%);
+    .carousel-img-placeholder,
+    .carousel-caption {
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    .carousel-link {
+        color: rgba(255, 255, 255, 0.75);
 
         &:hover {
             color: white;
@@ -57,14 +60,18 @@
     }
 
     .carousel-controls {
-        bottom: 1.25rem;
+        bottom: 0.5rem;
         position: absolute;
         right: 1.25rem;
         z-index: 3;
 
         .carousel-control {
             text-decoration: none;
-            color: rgba(255, 255, 255, 75%);
+            color: rgba(255, 255, 255, 0.75);
+
+            &:hover {
+                color: white;
+            }
         }
     }
 }
