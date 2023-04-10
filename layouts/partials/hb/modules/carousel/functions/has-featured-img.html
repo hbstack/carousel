@@ -1,0 +1,5 @@
+{{- $has := isset .Params.images 0 }}
+{{- with partialCached "hb/functions/page-featured-image" . . }}
+  {{- $has = true }}
+{{- end }}
+{{- return $has -}}

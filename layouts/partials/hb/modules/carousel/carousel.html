@@ -18,17 +18,20 @@
     <div class="carousel-inner border border-secondary-subtle rounded-1">
       {{- $first := true }}
       {{- range $pages }}
+        {{- $hasImg := partialCached "hb/modules/carousel/functions/has-featured-img" . . }}
         <div class="carousel-item{{ cond $first ` active` `` }}">
-          {{ partial "hb/modules/carousel/image" (dict "Page" . "LazyLoading" (not $first)) }}
-          <div class="carousel-caption text-center text-md-start">
-            <div class="h5">
-              <a
-                class="carousel-caption-link d-block text-decoration-none"
-                href="{{ .RelPermalink }}">
-                {{- .Title -}}
-              </a>
+          {{ partial "hb/modules/carousel/image" (dict "Page" . "LazyLoading" (and (not $first) $hasImg)) }}
+          {{- if $hasImg }}
+            <div class="carousel-caption text-center text-md-start">
+              <div class="h5">
+                <a
+                  class="carousel-link d-block text-decoration-none"
+                  href="{{ .RelPermalink }}">
+                  {{- .Title -}}
+                </a>
+              </div>
             </div>
-          </div>
+          {{- end }}
         </div>
         {{- $first = false }}
       {{- end }}
