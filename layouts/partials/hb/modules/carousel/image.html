@@ -8,14 +8,16 @@
   {{- end }}
 {{- end }}
 {{- if $img }}
-  {{ partial "images/image" (dict
-    "Page" .Page
-    "Alt" .Page.Title
-    "Filename" $img
-    "ClassName" "carousel-img d-block w-100"
-    "LazyLoading" .LazyLoading
-    "Original" true)
-  }}
+  <a href="{{ .Page.RelPermalink }}" title="{{ .Page.Title }}">
+    {{ partial "images/image" (dict
+      "Page" .Page
+      "Alt" .Page.Title
+      "Filename" $img
+      "ClassName" "carousel-img d-block w-100"
+      "LazyLoading" .LazyLoading
+      "Original" true)
+    }}
+  </a>
 {{- else }}
   <a
     class="carousel-img-placeholder carousel-link d-flex align-items-center justify-content-center text-decoration-none h5 mb-0"
