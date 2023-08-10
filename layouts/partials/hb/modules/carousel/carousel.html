@@ -1,4 +1,9 @@
-{{- $id := printf "carousel-%s" page.File.UniqueID }}
+{{- $id := "" }}
+{{- with page.File }}
+  {{- $id = printf "carousel-%s" .UniqueID }}
+{{- else }}
+  {{- $id = printf "carousel-%d" now.UnixNano }}
+{{- end }}
 {{- $pages := .Pages }}
 {{- if $pages }}
   <div id="{{ $id }}" class="hb-carousel carousel slide hb-module">
