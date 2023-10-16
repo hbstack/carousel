@@ -6,7 +6,8 @@
 {{- end }}
 {{- $pages := .Pages }}
 {{- if $pages }}
-  <div id="{{ $id }}" class="hb-carousel carousel slide hb-module">
+<div class="hb-module">
+  <div id="{{ $id }}" class="hb-carousel carousel slide">
     <div
       class="carousel-indicators justify-content-center justify-content-md-start">
       {{- $first := true }}
@@ -43,4 +44,5 @@
     </div>
     {{ partial "hb/modules/carousel/controls" $id }}
   </div>
+</div>
 {{- end }}
