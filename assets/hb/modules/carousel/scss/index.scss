@@ -1,4 +1,7 @@
 /*! purgecss start ignore */
+
+@import "../../../../scss/bootstrap/carousel";
+
 .hb-carousel {
     .carousel-img-placeholder {
         background: rgba(var(--hb-body-color-rgb), 0.1);
