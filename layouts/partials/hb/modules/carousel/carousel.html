@@ -42,7 +42,7 @@
         {{- $first = false }}
       {{- end }}
     </div>
-    {{ partial "hb/modules/carousel/controls" $id }}
+    {{ partialCached "hb/modules/carousel/controls" $id $id }}
   </div>
 </div>
 {{- end }}
