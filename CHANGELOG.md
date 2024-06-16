@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.6](https://github.com/hbstack/carousel/compare/v0.2.5...v0.2.6) (2024-06-16)
+
+
+### Bug Fixes 🐞
+
+* images path ([1ab7754](https://github.com/hbstack/carousel/commit/1ab7754af83693928f0129e0a0fe4ab648c05262))
+
+
+### Performance Improvements ⚡️
+
+* cache controls partial ([ba81c9a](https://github.com/hbstack/carousel/commit/ba81c9ae6374e3944b614464cfd0084e5304dce7))
+
 ## [0.2.5](https://github.com/hbstack/carousel/compare/v0.2.4...v0.2.5) (2024-03-30)
 
 
