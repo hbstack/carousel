@@ -23,20 +23,39 @@
     </div>
     <div class="carousel-inner border border-secondary-subtle rounded-1">
       {{- $first := true }}
-      {{- range $pages }}
-        {{- $hasImg := partialCached "hb/modules/carousel/functions/has-featured-img" . . }}
+      {{- range $page := $pages }}
+        {{- $imgs := partialCached "_funcs/get-page-images" . . }}
         <div class="carousel-item{{ cond $first ` active` `` }}">
-          {{ partial "hb/modules/carousel/image" (dict "Page" . "LazyLoading" (and (not $first) $hasImg)) }}
-          {{- if $hasImg }}
+          {{- with index $imgs 0 }}
+            {{- $img := .RelPermalink }}
+            {{- with .Image }}
+              {{- $img = printf "%s?height=360px" .Name }}
+            {{- end }}
+            <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
+              {{ partial "images/image" (dict
+                "Page" $page
+                "Alt" $page.Title
+                "Filename" $img
+                "ClassName" "carousel-img d-block w-100"
+                "LazyLoading" $first
+                "Original" true)
+              }}
+            </a>
             <div class="carousel-caption text-center text-md-start">
               <div class="h5">
                 <a
                   class="carousel-link d-block text-decoration-none"
-                  href="{{ .RelPermalink }}">
-                  {{- .Title -}}
+                  href="{{ $page.RelPermalink }}">
+                  {{- $page.Title -}}
                 </a>
               </div>
             </div>
+          {{- else }}
+            <a
+              class="carousel-img-placeholder carousel-link d-flex align-items-center justify-content-center text-decoration-none h5 mb-0"
+              href="{{ $page.RelPermalink }}">
+              {{- $page.Title -}}
+            </a>
           {{- end }}
         </div>
         {{- $first = false }}
