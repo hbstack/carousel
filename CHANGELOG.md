@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.7](https://github.com/hbstack/carousel/compare/v0.2.6...v0.2.7) (2024-06-29)
+
+
+### Styles 🎨
+
+* set padding as px-3 and align text to center for image placeholder ([#179](https://github.com/hbstack/carousel/issues/179)) ([598d543](https://github.com/hbstack/carousel/commit/598d5439996854993c5ae5856e7f082dad0485ad))
+
 ## [0.2.6](https://github.com/hbstack/carousel/compare/v0.2.5...v0.2.6) (2024-06-16)
 
 
