@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.2.8](https://github.com/hbstack/carousel/compare/v0.2.7...v0.2.8) (2025-10-20)
+
+
+### Bug Fixes 🐞
+
+* **deps:** update dependency stylelint-scss to v6.10.0 ([5761938](https://github.com/hbstack/carousel/commit/57619388d314edb28e1943ab082e070c6210387c))
+* **deps:** update dependency stylelint-scss to v6.10.1 ([944e946](https://github.com/hbstack/carousel/commit/944e946f13897dbc2ece35eea52b5a7d27388532))
+* **deps:** update dependency stylelint-scss to v6.11.0 ([349ebf9](https://github.com/hbstack/carousel/commit/349ebf9716727d7618b3e06449e527e9c263933e))
+* **deps:** update dependency stylelint-scss to v6.11.1 ([9ee521d](https://github.com/hbstack/carousel/commit/9ee521daec007757af4df0b448877033f7533437))
+* **deps:** update dependency stylelint-scss to v6.12.0 ([d461511](https://github.com/hbstack/carousel/commit/d461511460e6a7d541065aa72ec5299b089f7f8b))
+* **deps:** update dependency stylelint-scss to v6.12.1 ([526e318](https://github.com/hbstack/carousel/commit/526e3184b58ed48deb0290f8ffbc2afc09fd8ffc))
+* **deps:** update dependency stylelint-scss to v6.4.1 ([cef7b73](https://github.com/hbstack/carousel/commit/cef7b7367d8b3fda48108a09e43942de02111da2))
+* **deps:** update dependency stylelint-scss to v6.5.0 ([8ed2635](https://github.com/hbstack/carousel/commit/8ed26355b9fb3af815e73e9ed10d01433a45eafa))
+* **deps:** update dependency stylelint-scss to v6.5.1 ([6937af6](https://github.com/hbstack/carousel/commit/6937af6df95ee093a012763a8d07f69577848308))
+* **deps:** update dependency stylelint-scss to v6.6.0 ([06597eb](https://github.com/hbstack/carousel/commit/06597ebeabdf8c0373ec7227c06236c1f5b55ac3))
+* **deps:** update dependency stylelint-scss to v6.7.0 ([faeff1d](https://github.com/hbstack/carousel/commit/faeff1d0a53f1170fd340366f9167c6377c18252))
+* **deps:** update dependency stylelint-scss to v6.8.0 ([f6ce8ba](https://github.com/hbstack/carousel/commit/f6ce8ba6b6c2a87549d6f124b1fe7f5c5e9ba3c6))
+* **deps:** update dependency stylelint-scss to v6.8.1 ([e7958cd](https://github.com/hbstack/carousel/commit/e7958cdcb62e40a71d3c32f535ceb50eb4ff29bd))
+* **deps:** update dependency stylelint-scss to v6.9.0 ([b18c789](https://github.com/hbstack/carousel/commit/b18c789ad460e73912be22a73d47e80726053ad0))
+
 ## [0.2.7](https://github.com/hbstack/carousel/compare/v0.2.6...v0.2.7) (2024-06-29)
 
 
