@@ -5,7 +5,7 @@
     href="#{{ . }}"
     data-bs-slide="prev">
     {{- partial "icons/icon" (dict "vendor" "bs" "name" "arrow-left-circle" "height" "1.75em" "width" "1.75em") -}}
-    <span class="visually-hidden">Previous</span>
+    <span class="visually-hidden">{{ i18n "carousel_previous" }}</span>
   </a>
   <a
     class="carousel-control"
@@ -13,6 +13,6 @@
     href="#{{ . }}"
     data-bs-slide="next">
     {{- partial "icons/icon" (dict "vendor" "bs" "name" "arrow-right-circle" "height" "1.75em" "width" "1.75em") -}}
-    <span class="visually-hidden">Next</span>
+    <span class="visually-hidden">{{ i18n "carousel_next" }}</span>
   </a>
 </div>
